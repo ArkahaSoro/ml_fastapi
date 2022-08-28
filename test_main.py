@@ -3,7 +3,6 @@ from main import app
 
 client = TestClient(app)
 
-
 def test_read_main():
     response = client.get("/")
     assert response.status_code == 200
@@ -25,4 +24,5 @@ def test_predict_negative():
     json_data = response.json() 
 
     assert response.status_code == 200
-    assert json_data['label'] == 'NEGATIVE'
+    assert json_data['label'] == 'POSITIVE'
+
